@@ -42,6 +42,7 @@ namespace TheNorthwestCornerMethod
                 return;
             }
 
+            // Создание столбцов
             for (int c = 0; c <= cols; c++)
             {
                 InputGrid.ColumnDefinitions.Add(new ColumnDefinition
@@ -50,10 +51,12 @@ namespace TheNorthwestCornerMethod
                 });
             }
 
+            // Создание строк
             for (int r = 0; r <= rows; r++)
                 InputGrid.RowDefinitions.Add(new RowDefinition());
             InputGrid.RowDefinitions.Add(new RowDefinition());
 
+            // Создание ячеек стоимостей и запасов
             for (int r = 0; r < rows; r++)
             {
                 for (int c = 0; c < cols; c++)
@@ -85,6 +88,7 @@ namespace TheNorthwestCornerMethod
                 InputGrid.Children.Add(tbSupply);
             }
 
+            // Создание ячеек потребностей
             for (int c = 0; c < cols; c++)
             {
                 var tbDemand = new TextBox
@@ -120,8 +124,9 @@ namespace TheNorthwestCornerMethod
             int totalDemand = demand.Sum();
 
             string balanceMessage = "";
-
             bool balanced = true;
+            
+            // Балансировка задачи
             if (totalSupply > totalDemand)
             {
                 balanced = false;
@@ -168,6 +173,7 @@ namespace TheNorthwestCornerMethod
             ResultTextBlock.Text = balanceMessage + GenerateTextTable(result, cost, originalSupply, originalDemand);
         }
 
+        // Отображение результатов в виде таблицы
         private string GenerateTextTable(int[,] result, int[,] cost, int[] supply, int[] demand)
         {
             StringBuilder sb = new StringBuilder();
@@ -201,6 +207,7 @@ namespace TheNorthwestCornerMethod
             return sb.ToString();
         }
 
+        // Получение TextBox по координатам
         private TextBox GetTextBox(int row, int col)
         {
             foreach (UIElement element in InputGrid.Children)
@@ -211,6 +218,7 @@ namespace TheNorthwestCornerMethod
             return null;
         }
 
+        // Реализация метода северо-западного угла
         private int[,] SolveNorthWestCorner(int[,] cost, int[] supply, int[] demand)
         {
             int m = supply.Length;
@@ -232,6 +240,7 @@ namespace TheNorthwestCornerMethod
             return result;
         }
 
+        // Сохранение результата в файл
         private void SaveToFile_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog { Filter = "Text files (*.txt)|*.txt" };
@@ -241,6 +250,7 @@ namespace TheNorthwestCornerMethod
             }
         }
 
+        // Проверка всех ячеек ввода
         private bool ValidateInputCells()
         {
             if (!int.TryParse(SuppliersTextBox.Text, out rows) || !int.TryParse(ConsumersTextBox.Text, out cols))
@@ -279,6 +289,7 @@ namespace TheNorthwestCornerMethod
             return true;
         }
 
+        // Получение матрицы стоимостей
         private int[,] GetCostMatrix()
         {
             if (!int.TryParse(SuppliersTextBox.Text, out rows) || !int.TryParse(ConsumersTextBox.Text, out cols))
@@ -300,6 +311,7 @@ namespace TheNorthwestCornerMethod
             return cost;
         }
 
+        // Получение массива запасов
         private int[] GetSupplyArray()
         {
             if (!int.TryParse(SuppliersTextBox.Text, out rows) || !int.TryParse(ConsumersTextBox.Text, out cols))
@@ -318,6 +330,7 @@ namespace TheNorthwestCornerMethod
             return supply;
         }
 
+        // Получение массива потребностей
         private int[] GetDemandArray()
         {
             if (!int.TryParse(SuppliersTextBox.Text, out rows) || !int.TryParse(ConsumersTextBox.Text, out cols))
