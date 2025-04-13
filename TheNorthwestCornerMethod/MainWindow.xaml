@@ -1,0 +1,31 @@
+﻿<Window x:Class="TheNorthwestCornerMethod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheNorthwestCornerMethod"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+            <TextBlock Text="Поставщики:" VerticalAlignment="Center"/>
+            <TextBox x:Name="SuppliersTextBox" Width="50" Margin="5"/>
+            <TextBlock Text="Потребители:" VerticalAlignment="Center"/>
+            <TextBox x:Name="ConsumersTextBox" Width="50" Margin="5"/>
+            <Button Content="Создать таблицу" Click="CreateTable_Click"/>
+        </StackPanel>
+
+        <ScrollViewer Height="248" VerticalScrollBarVisibility="Auto" Width="690">
+            <Grid x:Name="InputGrid" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </ScrollViewer>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
+            <Button Content="Решить" Click="Solve_Click" Margin="5"/>
+            <Button Content="Загрузить" Click="LoadFromFile_Click" Margin="5"/>
+            <Button Content="Сохранить" Click="SaveToFile_Click" Margin="5" />
+            <Button Content="Очистить" Click="ClearButton_Click" Margin="5"/>
+        </StackPanel>
+
+        <TextBlock x:Name="ResultTextBlock" TextWrapping="Wrap" Margin="5"/>
+    </StackPanel>
+</Window>

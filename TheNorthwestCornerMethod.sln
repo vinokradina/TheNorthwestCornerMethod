@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNorthwestCornerMethod", "TheNorthwestCornerMethod\TheNorthwestCornerMethod.csproj", "{23B4E6E3-D31D-4EAA-ACB8-4800D7FB13D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B4E6E3-D31D-4EAA-ACB8-4800D7FB13D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B4E6E3-D31D-4EAA-ACB8-4800D7FB13D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B4E6E3-D31D-4EAA-ACB8-4800D7FB13D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B4E6E3-D31D-4EAA-ACB8-4800D7FB13D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3959E10-BF0D-4A45-81F4-32147E9D77F8}
+	EndGlobalSection
+EndGlobal
